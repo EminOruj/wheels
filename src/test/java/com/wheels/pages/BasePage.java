@@ -87,7 +87,7 @@ public class BasePage {
     @FindBy(xpath = "//p[.='Please select one']")
     public WebElement dropdown1;
 
-  //locator for 1dropdown
+  //locator for 1dropdown is fine
 
 
 
