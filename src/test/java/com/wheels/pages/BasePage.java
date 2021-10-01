@@ -39,14 +39,14 @@ public class BasePage {
     @FindBy(xpath = "//span[contains(text(),'601 West 26th Street') or contains (text(),'New York, NY 10001')]")
     public WebElement address1;
 
-    @FindBy(xpath = "//div[@class='menu-item']//following-sibling::a[.=' Fly ']")
+    @FindBy(xpath = "//a[.=' Fly ']")
     public WebElement flyTab;
 
     @FindBy(xpath = "//li[@class='ng-star-inserted'][3]/a")
     public WebElement coreMembership;
 
     @FindBy(xpath = "//h3[contains(text(),'SHARED FLIGHTS')]")
-    public WebElement multiple;
+    public List<WebElement>  multiple;
 
     @FindBy(xpath = "//input[@id='FirstName-clone']")
     public WebElement username;
@@ -84,19 +84,14 @@ public class BasePage {
     @FindBy(id = "Country-clone")
     public WebElement country ;
 
-    @FindBy(xpath = "//p[.='Please select one']")
+    @FindBy(xpath = "//div[@class='text-select']/p")
     public WebElement dropdown1;
 
-  //locator for 1dropdown is fine
+    @FindBy(xpath = "//input[@id='mktoRadio_90595_0-clonecss']")
+    public WebElement RadioBut1;
 
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//div[@class='dropdown-box active']//li/p[.='1-5']")
+    public WebElement dropDown2;
 
 
 

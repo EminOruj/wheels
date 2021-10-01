@@ -57,8 +57,9 @@ public class tasks {
         System.out.println(obj.emailAdd.getText());
         System.out.println(obj.address1.getText());
     }
+
     @Test
-    public void test2(){
+    public void test2() {
         obj.flyTab.click();
         BrowserUtils.sleep(2);
         obj.coreMembership.click();
@@ -66,23 +67,46 @@ public class tasks {
     }
 
     @Test
-    public void test3() {
+    public void test3() throws InterruptedException {
+        BrowserUtils.sleep(3);
+
+
+        System.out.println(obj.pageHeader.getAttribute("innerText"));
+        System.out.println(obj.pageHeader2.getAttribute("innerText"));
+        BrowserUtils.sleep(3);
+        obj.flyTab.click();
         BrowserUtils.sleep(2);
+        obj.coreMembership.click();
+        Thread.sleep(2000);
+
+        int count = 0;
+        for (WebElement each : obj.multiple) {
+            if (count == 5 || count == 6 || count == 7) {
+                System.out.println(each.getAttribute("innerText"));
+            }
+            count++;
+        }
+    }
+
+    @Test
+    public void test4() {
+        BrowserUtils.sleep(3);
         obj.username.sendKeys("Emin");
         obj.password.sendKeys("Oruj");
-        BrowserUtils.sleep(2);
+        BrowserUtils.sleep(3);
         obj.continueButton.click();
     }
-        @Test
-       public void test4(){
+
+    @Test
+    public void test5() {
         BrowserUtils.sleep(2);
-            System.out.println(obj.Requestlink.getText());
-            Assert.assertTrue(obj.Requestlink.isEnabled());
+        System.out.println(obj.Requestlink.getText());
+        Assert.assertTrue(obj.Requestlink.isEnabled());
 
     }
 
     @Test
-    public void test5(){
+    public void test6() {
         obj.email.sendKeys("emin.oruj@aol.com");
         obj.phoneNumber.sendKeys("929-693-4344");
         obj.companyName.sendKeys("wheelsup");
@@ -93,7 +117,14 @@ public class tasks {
         obj.state.sendKeys("NY");
         obj.country.sendKeys("USA");
         BrowserUtils.sleep(1);
-        obj.dropdown1.click();
+        //Select select = new Select(obj.dropdown1);
+       // select.selectByVisibleText("1-5");
+        //obj.RadioBut1.click();
+
+
+
+        obj.dropDown2.click();
+
 
     }
 
